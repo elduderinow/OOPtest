@@ -1,7 +1,7 @@
 <?php
-class Beer2 {
-    private string $name;
-    private float $alcoholp;
+class Beer2 { //public properties are in some cases good, but most of the time it aint good because anyone can change them. It's dangerous because the code can be easily messed up this way.
+    private string $name;// making them private is the solution. But you can only access them inside the class.
+    private float $alcoholp; //access them outside the class will need a get or set function.
     private string $color;
     private float $price;
     private string $temperature;
@@ -9,7 +9,7 @@ class Beer2 {
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(string $name): void  //set function to change the value
     {
         $this->name = $name;
     }
@@ -17,7 +17,7 @@ class Beer2 {
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): string //set function to get the value
     {
         return $this->name;
     }
@@ -92,6 +92,7 @@ class Beer2 {
 $DuvelObj = new Beer2("Duvel", 8.5, "blonde", 3.5);
 
 
+//with the set and get we can acces them now outside the class, we can change the value even. If you don't use a validation for the set func then setting it to private is mobbing with the crane open.
 $DuvelObj->setName("Duvel");
 $DuvelObj->setAlcoholp(8.5);
 $DuvelObj->setColor("Light");

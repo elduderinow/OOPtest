@@ -6,7 +6,7 @@ class Beverage
 
     public function __construct($drink)
     {
-        self::$timesServed++;
+        self::$timesServed++; //add 1 for each time the construct is called (each time a new instance is made)
         echo "Here's your ".$drink.", You had ".self::$timesServed . " drinks. <br>";
     }
 }
